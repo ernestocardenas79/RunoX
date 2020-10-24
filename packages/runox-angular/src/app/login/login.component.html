@@ -1,0 +1,17 @@
+
+
+<!-- <rnx-chat-room *ngIf="isLogged" [player]="user" [room]="room$ | async"></rnx-chat-room> -->
+<rnx-chat-room [player]="user" [roomName]="room.name"></rnx-chat-room>
+
+<div class="login-page">
+  <rnx-login-modal
+    [status]="status"
+    [roomName]="room.name"
+    [players]="room.playersGroup.players"
+    (joinRoom)="onJoinUser($event)"
+    (createRoom)="onCreateGame($event)"
+    (startGame)="onStartGame($event)"
+  ></rnx-login-modal>
+</div>
+
+<rnx-open-chat-button></rnx-open-chat-button>
